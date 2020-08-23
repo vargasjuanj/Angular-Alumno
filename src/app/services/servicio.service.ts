@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as  data from '../../assets/json/alumnos.json'
-
+// en tsconfig.base.json pegar esta propiedad en compilation unit debajo de eport ->     "resolveJsonModule": true, y cerrar y volver abrir ide
 @Injectable({
   providedIn: 'root'
 })
