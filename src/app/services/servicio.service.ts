@@ -10,4 +10,7 @@ datos:any= (data as any).default
     console.log('datos')
     console.log(this.datos)
   }
+  calcularPromedio(notas:any[]){
+    return notas.reduce((anterior,actual)=>anterior+=actual)/notas.length
+  }
 }

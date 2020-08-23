@@ -14,6 +14,6 @@ datos:Entidad[]
     this.datos=this.servicio.datos
   }
 calcularPromedio(notas:any[]){
-return notas.reduce((anterior,actual)=>anterior+=actual)/notas.length
+return this.servicio.calcularPromedio(notas)
 }
 }
