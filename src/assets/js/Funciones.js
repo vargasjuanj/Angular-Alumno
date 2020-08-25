@@ -69,3 +69,52 @@ datosFiltrados=()=>{
   return buscado==undefined ? datos : datos.filter(element=>element.descripcion.toLowerCase().includes(buscado.toLowerCase()))
         
        }
+
+       //Si quiero obtener un elemento pero dentro de un array uso filter, find es para devolver un objeto no mas
+
+       //dOS FORMAS DE CALCULAR MEJOR Y PEOR PROMEDIO
+
+       mejorAlumno=()=>{
+        let promedios = this.datos.map(element=>this.calcularPromedio(element.notas))
+        let max= Math.max(...promedios)
+        return this.datos.find(element=>this.calcularPromedio(element.notas)==max)
+          }
+//Para peor alumno uso min en vez de max
+
+//otras formas de calcular el mejor y peor promedio
+
+
+mejorAlumno=()=>{
+
+  let promedioActual=0, promedioAnterior=0
+  let alumnoEncontrado={}
+ this.state.alumnos.forEach((alumno)=>{
+    promedioActual=this.getPromedio(alumno.notas)
+    if(promedioAnterior<promedioActual){
+      promedioAnterior=promedioActual
+      alumnoEncontrado=alumno
+    }
+  })
+ return alumnoEncontrado
+ 
+ }
+ 
+ peorAlumno=()=>{
+ 
+  let promedioActual=0
+  let alumnoEncontrado={}
+ let  promedioAnterior= this.getPromedio(this.state.alumnos[0].notas)
+ for (let i=1; i<this.state.alumnos.length; i++){
+    promedioActual=this.getPromedio(this.state.alumnos[i].notas)
+    if(promedioActual<promedioAnterior){
+      promedioAnterior=promedioActual
+      alumnoEncontrado=this.state.alumnos[i]
+    }
+ 
+ }
+ return alumnoEncontrado
+ }
+
+
+
+

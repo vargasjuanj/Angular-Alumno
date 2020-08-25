@@ -1,17 +1,19 @@
-<nav class=" container navbar navbar-expand-lg navbar-light bg-light fixed-top" >
+<nav class=" container navbar navbar-expand-lg navbar-dark bg-primary fixed-top p-4 text-white" >
     <div class="collapse navbar-collapse  justify-content-center" id="navbarSupportedContent">
-      <form class="form-inline my-2 mr-3 my-lg-0">
+      <a class="navbar-brand mr-auto" [routerLink]="['/']" routerLinkActive="router-link-active" >HOME</a>    
+      <form (ngSubmit)="buscarPorLegajo()" class="form-inline my-2 mr-3 my-lg-0">
         <label class="mr-3">Legajo:</label>
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        <input  [(ngModel)]="legajo" name="legajo" class="form-control mr-sm-2" type="number" placeholder="Search" aria-label="Search" >
+        <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
       </form>
-      <form class="form-inline my-2 my-lg-0">
+ 
+      <form (ngSubmit)="buscarPorNombre()"  class="form-inline my-2 my-lg-0">
         <label class="mr-3">Nombre:</label>
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        <input [(ngModel)]="nombre" name="nombre" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"  >
+        <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
       </form>
    
-        <a style="margin-left:30px; text-decoration-line: underline; " href="#">MEJOR ALUMNO</a>
+        <a style="margin-left:30px; text-decoration-line: underline; color:yellow" [routerLink]="['/detalle/1']" routerLinkActive="router-link-active" >MEJOR ALUMNO</a>
   
     </div>
   </nav>

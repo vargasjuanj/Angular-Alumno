@@ -5,6 +5,7 @@ import { DetalleAlumnoComponent } from './components/detalle-alumno/detalle-alum
 
 const routes: Routes = [
   {path:'',component:GrillaAlumnosComponent},
+  {path:':param',component:GrillaAlumnosComponent},
   {path:'detalle/:legajo',component:DetalleAlumnoComponent}
 ];
 

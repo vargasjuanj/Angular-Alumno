@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuSuperiorDeOpcionesComponent } from './components/menu-superior-de-opciones/menu-superior-de-opciones.component';
@@ -17,7 +17,9 @@ import {ServicioService} from './services/servicio.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
+
   ],
   providers: [ServicioService],
   bootstrap: [AppComponent]
